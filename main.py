@@ -6,4 +6,4 @@ driver = lib.start_browser()
 seats_page = SeatsPage(driver)
 
 if not seats_page.open_page('https:\\static.gordiansoftware.com'):
-    print('Sorry! The page was not found, try again!')
+    print('Sorry! Try again!')
