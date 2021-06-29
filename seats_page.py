@@ -9,7 +9,8 @@ class SeatsPage(Lib):
         self.driver = driver
 
     def open_page(self, url):
-        self.driver.get(url)
+        page = self.driver.get(url)
+        # self.wait_page(page)
         print('')
 
     def get_seats_map(self):

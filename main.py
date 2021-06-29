@@ -1,7 +1,6 @@
 from lib import Lib
 from seats_page import SeatsPage
 
-
 lib = Lib()
 driver = lib.start_browser()
 seats_page = SeatsPage(driver)
