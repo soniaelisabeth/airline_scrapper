@@ -13,12 +13,9 @@ class Lib():
         self.driver = webdriver.Chrome(self.WEBDRIVER_PATH)
         return self.driver
     
-    def wait_page(self, page, wait=5):
-        if WebDriverWait(page, wait).until(EC.presence_of_element_located(self.__MAP_ELEMENT)):
+    def wait_page(self, wait=5):
+        if WebDriverWait(self.driver, wait).until(EC.presence_of_element_located(self.__MAP_ELEMENT)):
             return True
 
-    def click(self):
-        ...
-    
-    def check(self):
-        ...
+    def click(self, elem):
+        WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(elem)).click()
