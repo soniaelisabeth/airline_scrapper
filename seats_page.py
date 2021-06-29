@@ -6,6 +6,7 @@ class SeatsPage(Lib):
     __SEAT_BUTTON = (By.ID, 'select-seat')
     __CONFIRM_BUTTON = (By.ID, 'next-button')
     __GREEN_SEATS = (By.XPATH, "//*[@fill='#AADB72']")
+    __SEATS_REFERENCE = (By.CLASS_NAME, 'gordian-seat')
 
     def __init__(self, driver):
         self.driver = driver
@@ -14,8 +15,8 @@ class SeatsPage(Lib):
         self.driver.get(url)
     
     def locate_seats(self, row, position):
-        airplane_rows = self.driver.find_element_by_class_name(f'row-{row}')
-        airplane_seats = airplane_rows.find_elements_by_class_name('gordian-seat')
+        airplane_rows = self.driver.find_element(f'row-{row}')
+        airplane_seats = airplane_rows.find_elements(self.__SEATS_REFERENCE)
 
         if not airplane_seats[position].is_enabled():
             print('this seat is already taken!')
