@@ -1,7 +1,6 @@
 from lib import Lib
 from seats_page import SeatsPage
 
-
 lib = Lib()
 driver = lib.start_browser()
 seats_page = SeatsPage(driver)
@@ -14,12 +13,22 @@ flights = [1,2]
 for flight in flights:
     print('Choose your seats!')
     row = int(input('Seat Number: '))
+
+    if row > 60 or row < 18:
+        print('Please, select a valid seat number!')
+        break
+
     seat = str(input('Seat Letter: '))
+    if seat.isnumeric():
+        print('Please, select a valid letter!')
+        break
 
     seats_page.get_green_seats()
     position = seats_page.check_seat_num(seat)
+    
     if not seats_page.locate_seats(row,position):
         print('Sorry! Try again!')
+        break
     
     seats_page.click_selection_seat()
     seats_page.click_confirm()
