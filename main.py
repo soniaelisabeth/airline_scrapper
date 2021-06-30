@@ -23,4 +23,3 @@ for flight in flights:
     
     seats_page.click_selection_seat()
     seats_page.click_confirm()
-    
