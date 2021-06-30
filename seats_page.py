@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from lib import Lib
-import logging
 
 class SeatsPage(Lib):
     __SEAT_BUTTON = (By.ID, 'select-seat')
@@ -33,7 +32,6 @@ class SeatsPage(Lib):
             airplane_seats[position].click()
             print('Seat availabe: standart seat')
             return True
-            
 
     def check_seat_num(self, seat):
         lines = ['A','B','C','D','E','F','G','H','J','K']
