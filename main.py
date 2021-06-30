@@ -1,4 +1,5 @@
 from lib import Lib
+from time import sleep
 from seats_page import SeatsPage
 
 lib = Lib()
@@ -20,10 +21,9 @@ for flight in flights:
 
     seat = str(input('Seat Letter: '))
     if seat.isnumeric():
-        print('Please, select a valid letter!')
+        print('Please, select a letter!')
         break
 
-    seats_page.get_green_seats()
     position = seats_page.check_seat_num(seat)
     
     if not seats_page.locate_seats(row,position):
@@ -32,3 +32,6 @@ for flight in flights:
     
     seats_page.click_selection_seat()
     seats_page.click_confirm()
+
+
+seats_page.screenshot()

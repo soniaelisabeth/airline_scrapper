@@ -6,8 +6,6 @@ from selenium.webdriver.support import expected_conditions as EC
 class Lib():
     WEBDRIVER_PATH = '.\\tools\\chromedriver.exe'
 
-    def __init__(self):...
-
     def start_browser(self):
         self.driver = webdriver.Chrome(self.WEBDRIVER_PATH)
         return self.driver
