@@ -57,4 +57,4 @@ class SeatsPage(Lib):
             self.click(self.__EXIT_SEAT_BUTTON)
 
     def screenshot(self):
-        self.driver.find_element(*self.__SEAT_SELECTION_BOX).screenshot('seat selection.png')
+        self.driver.find_element(*self.__SEAT_SELECTION_BOX).screenshot('seat_selection.png')
